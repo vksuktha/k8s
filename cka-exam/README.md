@@ -1,4 +1,4 @@
-My Exam Prep:
+Want to get 100% score in CKA?
 
 https://awscloudengineer.com/clearing-cka-exam-with-100%-result/
 
