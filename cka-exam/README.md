@@ -56,18 +56,9 @@ Try the following exercises:
 26. Deploy a pod with the wrong image name (like --image=nginy) and find the error message.
 
 
-###Non-K8S
-1. Convert a CRT to a PEM
-	a. Convert it back
-2. Backup an etcd cluster
-3. List the members of an etcd cluster
-4. Find the health of etcd
+# Solution
 
-
-
-
-
-
-
+https://github.com/ashutoshvct/k8s/tree/master/cka-exam/configs
+Note: The solutions are not exact, just to help you enough.
 
 
