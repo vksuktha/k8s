@@ -4,8 +4,7 @@ https://awscloudengineer.com/clearing-cka-exam-with-100%-result/
 
 Try the following exercises:
 
-1. Create a node that has a SSD and label it as such. 
-2. Create a pod that is only scheduled on SSD nodes.
+1. Create a node that has a SSD and label it as such. Create a pod that is only scheduled on SS nodes.
 2. Create 2 pod definitions: the second pod should be scheduled to run anywhere the first pod is running - 2nd pod runs alongside the first pod.
 3. Create a deployment running nginx version 1.12.2 that will run in 2 pods
 	a. Scale this to 4 pods.
