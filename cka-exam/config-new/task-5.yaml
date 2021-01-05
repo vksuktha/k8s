@@ -1,0 +1,5 @@
+kubectl run -it --image=ubuntu --restart=Never shell -- 
+
+# apt-get update
+# apt-get install -y dnsutils
+nslookup kubernetes.default | grep Name

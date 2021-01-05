@@ -1,0 +1,28 @@
+## since the pod needs to have label app=revproxy, the pod selector determining 
+## which pod the RC is operating on, so created a deployment with name revproxy.
+## then did 'k edit deploy revproxy' and changed the label of the deployment.
+## catch is to make the deployment using name as revproxy. 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: revproxy
+  name: revproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: revproxy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: revproxy
+    spec:
+      containers:
+      - image: nginx:1.7.9
+        name: nginx
+        resources: {}
+status: {}

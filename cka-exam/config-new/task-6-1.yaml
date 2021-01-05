@@ -19,15 +19,15 @@ spec:
     spec:
       containers:
       - image: nginx-1.7.9
-        name: nginx-1-7-9-hlncs
+        name: nginx-1-7-9
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: vol
+        - name: nginx-vol
           mountPath: /vol
         resources: {}
       volumes:
-      - name: vol
+      - name: nginx-vol
         hostPath:
           path: /data
           type: Directory

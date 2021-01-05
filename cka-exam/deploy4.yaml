@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-vol
+  name: nginx-vol-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-vol
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-vol
+    spec:
+      containers:
+      - image: nginx:1.7.9
+        name: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: cache-vol
+          mountPath: /cache2
+        resources: {}
+      volumes: 
+      - name: cache-vol
+        emptyDir: {}
+  
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-vol
+  name: my-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-vol
+  type: NodePort
+status:
+  loadBalancer: {}

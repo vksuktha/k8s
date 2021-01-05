@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: fluentd-elasticsearch
+  name: fluentd-elasticsearch
+spec:
+  selector:
+    matchLabels:
+      app: fluentd-elasticsearch
+  template:
+    metadata:
+      labels:
+        app: fluentd-elasticsearch
+    spec:
+      containers:
+      - image: nginx
+        name: fluentd-elasticsearch
+  updateStrategy:
+     rollingUpdate:
+       maxUnavailable: 1
+     type: RollingUpdate
